@@ -131,9 +131,7 @@ class _MobileNumberScreenState extends State<MobileNumberScreen> {
                                             OtpScreen(maskedNumber),
                                       ),
                                     );
-                                    setState(() {
-                                      // buttonColor = Colors.green;
-                                    });
+                                   
                                   }
                                 : null,
                         child: Text('Get OTP'),
@@ -257,9 +255,8 @@ class _OtpScreenState extends State<OtpScreen> {
         FocusScope.of(context).requestFocus(_focusNodes[index + 1]);
       }
     }
-    // Check if the last TextField is completed
+    
     if (index == _otpLength - 1 && value.length == 1) {
-      // All OTP fields are filled, verify OTP
       String otp = _controllers.fold<String>(
           "", (previousValue, controller) => previousValue + controller.text);
        if (otp == "934477") {
@@ -277,7 +274,6 @@ class _OtpScreenState extends State<OtpScreen> {
         }
     }
 
-    // Do something with the OTP
     print("OTP: $value");
   }
 
@@ -288,7 +284,6 @@ class _OtpScreenState extends State<OtpScreen> {
         _focusNodes[i + 1].requestFocus();
       }
       if (i == _otpLength - 1) {
-        // All OTP fields are filled, verify OTP
         print('otp');
         print(otp);
         if (otp == "934477") {
@@ -307,7 +302,6 @@ class _OtpScreenState extends State<OtpScreen> {
       }
     }
 
-    // _focusNodes[_otpLength - 1].requestFocus();
   }
 
   @override
@@ -528,11 +522,7 @@ class _OtpScreenState extends State<OtpScreen> {
                 ),
               ),
               
-              // ElevatedButton(
-              //   onPressed: () {
-              //   },
-              //   child: Text('Verify OTP'),
-              // ),
+             
             ],
           ),
         ),
